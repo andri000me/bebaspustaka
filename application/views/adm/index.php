@@ -9,6 +9,7 @@
                 <th>Judul Buku</th>
                 <th>Pengarang Buku</th>
                 <th>Tahun Terbit</th>
+                <th>Harga</th>
             </tr>
         </thead>
         <tbody>
@@ -26,6 +27,7 @@
                 <td><?= $data['judul'] ?> </td>
                 <td><?= $data['pengarang'] ?> </td>
                 <td><?= $data['tahun'] ?> </td>
+                <td><?= $data['harga'] ?> </td>
             </tr>
             <?php }?>
         </tbody>
