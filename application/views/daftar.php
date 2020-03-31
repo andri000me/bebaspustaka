@@ -1,5 +1,5 @@
 <!-- Load File Jquery -->
-<script src="<?php echo base_url("assets/js/jquery.min.js"); ?>" type="text/javascript"></script>
+<!--<script src="--><?php //echo base_url("assets/js/jquery.min.js"); ?><!--" type="text/javascript"></script>-->
 <script src="<?php echo base_url("assets/js/ajax.js"); ?>" type="text/javascript"></script>
 
 <div class="container">

@@ -19,4 +19,13 @@
 
     </body>
 
+    <div class="container">
+        <footer id="footer">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Fakultas Ilmu Budaya UNMUL <br>&copy; 2020</p>
+                </div>
+            </div>
+        </footer>
+    </div>
 </html>
