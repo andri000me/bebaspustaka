@@ -24,16 +24,22 @@ class Admin extends CI_Controller {
     }
 
     function verify($id){
-        $this->db->set('v', '1');
+        $data = array(
+            'v' => 1,
+            'tanggal' => date('Y-m-d' )
+        );
         $this->db->where('nim', $id);
-        $this->db->update('tbl_bp');
+        $this->db->update('tbl_bp', $data);
         redirect('Admin/Verifikasi');
     }
 
     function unverify($id){
-        $this->db->set('v', '0');
+        $data = array(
+            'v' => 0,
+            'tanggal' => date('Y-m-d' )
+        );
         $this->db->where('nim', $id);
-        $this->db->update('tbl_bp');
+        $this->db->update('tbl_bp', $data);
         redirect('Admin/Verifikasi');
     }
 }

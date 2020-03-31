@@ -19,11 +19,14 @@ class Auth extends CI_Controller {
             $data = array(
                 'logged' => TRUE,
                 'username' => $row->username,
-                'akses' => $row->akses
+                'status' => $row->status
             );
             $this->session->set_userdata($data);
+            $status = $row->status;
 
-            redirect(site_url('Admin/Verifikasi'));
+            if ($status === 'Perpustakaan') {
+                redirect(site_url('Admin/Verifikasi'));
+            }
         } else {
             //            tampilkan pesan error
             $error = 'Username/Password salah';

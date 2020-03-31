@@ -11,7 +11,7 @@
 
     <div class="card border-secondary mb-3">
         <div class="card-body">
-            <?= form_open('Fib/Cari'); ?>
+            <?= form_open('Fib/Cari_'); ?>
             <center>
                 <div class="form-group col-md-6 .col-md-offset-3">
                     <label class="col-form-label" for="inputDefault">NIM</label>

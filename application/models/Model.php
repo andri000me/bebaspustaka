@@ -8,7 +8,7 @@ class Model extends CI_Model
         return [
             ['field' => 'nim',
                 'label' => 'NIM',
-                'rules' => 'required|is_unique[tbl_bp.nim]'],
+                'rules' => 'required|is_unique[tbl_mahasiswa.nim_mhs]'],
 
             ['field' => 'nama',
                 'label' => 'Nama',
@@ -39,7 +39,8 @@ class Model extends CI_Model
             'prodi' => $_POST['prodi'],
             'judul' => $_POST['judul'],
             'pengarang' => $_POST['pengarang'],
-            'tahun' => $_POST['tahun']
+            'tahun' => $_POST['tahun'],
+            'harga' => $_POST['harga']
         );
         $this->db->insert('tbl_bp',$data);
     }
@@ -49,4 +50,13 @@ class Model extends CI_Model
         return $this->db->get('tbl_bp')->result_array();
     }
 
+    function get_all_mhs(){
+        $this->db->order_by('id_mhs', 'asc');
+        return $this->db->get('tbl_mahasiswa');
+    }
+
+    function cari($id){
+        $query= $this->db->get_where('v_prodi_mhs',array('nim_mhs'=>$id));
+        return $query;
+    }
 }

@@ -15,6 +15,7 @@ class Fib extends CI_Controller {
     }
 
     public function Daftar(){
+        $data['record']=  $this->Model->get_all_mhs();
         //tampilkan halaman
         $data['_view'] = 'daftar';
         $this->load->view('layout/main', $data);
@@ -22,18 +23,18 @@ class Fib extends CI_Controller {
 
     function Save(){
         //setting validasi data
-        $rules      = $this->Model->rules();
-        $validation = $this->form_validation->set_rules($rules);
+//        $rules      = $this->Model->rules();
+//        $validation = $this->form_validation->set_rules($rules);
 //
-        if ($validation->run()) {
+//        if ($validation->run()) {
             $this->Model->save();
             $this->session->set_flashdata('info', 'Data berhasil disimpan');
             redirect('Fib/Daftar');
-        }
+//        }
 //
         //tampilkan halaman
-        $data['_view'] = 'daftar';
-        $this->load->view('layout/main', $data);
+//        $data['_view'] = 'daftar';
+//        $this->load->view('layout/main', $data);
     }
 
     public function Cetak(){
@@ -42,7 +43,7 @@ class Fib extends CI_Controller {
         $this->load->view('layout/main', $data);
     }
 
-    function Cari(){
+    function Cari_(){
         $cari = $_POST['nim'];
         $query = $this->db->get_where('tbl_bp',array('nim'=>$cari))->result_array();
         foreach ($query as $q){
@@ -60,5 +61,11 @@ class Fib extends CI_Controller {
             $this->session->set_flashdata('info', 'data tidak ditemukan');
             redirect('Fib/Cetak');
         }
+    }
+
+    public function cari(){
+        $nim=$_GET['nim'];
+        $cari =$this->Model->cari($nim)->result();
+        echo json_encode($cari);
     }
 }

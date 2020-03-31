@@ -54,7 +54,7 @@
                 <p align="justify">&emsp; &emsp; Demikian keterangan ini diberikan untuk digunakan sebagai syarat ujian pendadaran.</p>
                 <table style="position: relative;left: 400px;" cellpadding="0" cellspacing="0">
                     <tr>
-                        <td>Samarinda, 26 Maret 2020 </td>
+                        <td>Samarinda, <?= date_indo($data['tanggal'])?> </td>
                     </tr>
                     <tr>
                         <td>Petugas Perpustakaan FIB-Unmul</td>
@@ -109,7 +109,7 @@
                 </p>
                 <table style="position: relative;left: 400px;" cellpadding="0" cellspacing="0">
                     <tr>
-                        <td>Samarinda, 26 Maret 2020 </td>
+                        <td>Samarinda, <?= date_indo($data['tanggal'])?> </td>
                     </tr>
                     <tr>
                         <td>Petugas Perpustakaan FIB-Unmul</td>
